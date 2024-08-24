@@ -3,30 +3,41 @@ import {
   Card,
   CardActions,
   CardContent,
+  SxProps,
+  Theme,
   Typography,
 } from '@mui/material';
+import { IArticle } from '../types/article';
 
-function Article() {
+interface IArticleProps {
+  article: IArticle;
+  sx?: SxProps<Theme>;
+}
+
+function Article({ article, sx }: IArticleProps) {
   return (
-    <Card variant="outlined">
+    <Card variant="outlined" sx={sx}>
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          23.08.2024
+          {article.author}
         </Typography>
-        <Typography variant="h5" component="div">
-          Article name
+        <Typography variant="h5" component="div" sx={{ mb: 1 }}>
+          {article.title}
         </Typography>
-        <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          5 mins read
-        </Typography>
-        <Typography variant="body2">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Temporibus
-          repellendus aut iusto nam, nesciunt, nisi culpa sint illum facere
-          repudiandae praesentium vitae, delectus sapiente magnam magni tenetur
-          distinctio odit tempore.
+        <Typography
+          variant="body2"
+          sx={{
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            display: '-webkit-box',
+            WebkitLineClamp: '2',
+            WebkitBoxOrient: 'vertical',
+          }}
+        >
+          {article.content}
         </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions sx={{ px: 2 }}>
         <Button size="small">Read more</Button>
       </CardActions>
     </Card>
