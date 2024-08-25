@@ -7,5 +7,6 @@ export interface IArticle {
 
 export interface IArticlesResponse {
   articles: IArticle[];
+  totalPages: number;
   topic: string;
 }

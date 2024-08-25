@@ -14,6 +14,8 @@ function ArticlesPage() {
   const subscriptionPlan = useContext(SubscriptionPlanContext);
 
   const [topic, setTopic] = useState({ value: '', isDirty: false });
+  const [page, setPage] = useState(1);
+
   const pageTitle = (
     <Typography component="h1" variant="h2" gutterBottom>
       Articles Seeker
@@ -32,6 +34,11 @@ function ArticlesPage() {
 
   const onInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTopic({ value: e.target.value, isDirty: true });
+    setPage(1);
+  };
+
+  const onPageChange = (_: React.ChangeEvent<unknown>, value: number) => {
+    setPage(value);
   };
 
   useEffect(() => {
@@ -39,20 +46,20 @@ function ArticlesPage() {
       return;
     }
 
-    const fetchArticles = async (topic: string) => {
+    const fetchArticles = async (topic: string, page: number) => {
       await makeRequest({
         url: 'http://localhost:3000/articles',
         method: 'GET',
-        params: { topic },
+        params: { topic, page },
       });
     };
 
-    const timeoutId = setTimeout(() => fetchArticles(topic.value), 500);
+    const timeoutId = setTimeout(() => fetchArticles(topic.value, page), 500);
 
     return () => {
       clearTimeout(timeoutId);
     };
-  }, [topic, makeRequest]);
+  }, [topic, page, makeRequest]);
 
   return (
     <Box
@@ -110,7 +117,9 @@ function ArticlesPage() {
         placement="top"
       >
         <Pagination
-          count={10}
+          count={data?.totalPages}
+          page={page}
+          onChange={onPageChange}
           sx={{ mt: 2 }}
           disabled={subscriptionPlan === SubscriptionPlans.FREE}
         />
