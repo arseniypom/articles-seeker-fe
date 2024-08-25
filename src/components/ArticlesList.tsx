@@ -23,7 +23,7 @@ function ArticlesList({ articles, topic, isLoading, error }: IArticleProps) {
   }
 
   if (!topic) {
-    return "Start typing and we'll find the best articles for you";
+    return "Start typing and we'll find the best articles for you ✨";
   }
 
   if (!articles?.length) {

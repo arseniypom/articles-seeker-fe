@@ -6,7 +6,7 @@ function ArticleSkeleton() {
       <CardContent>
         <Stack spacing={1}>
           <Skeleton variant="rectangular" width={50} height={14} />
-          <Skeleton variant="rectangular" width="full" height={60} />
+          <Skeleton variant="rectangular" width="full" height={30} />
           <Skeleton variant="rectangular" width="full" height={14} />
           <Skeleton variant="rectangular" width="full" height={14} />
         </Stack>
