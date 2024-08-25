@@ -48,7 +48,7 @@ function ArticlesPage() {
 
     const fetchArticles = async (topic: string, page: number) => {
       await makeRequest({
-        url: 'http://localhost:3000/articles',
+        url: `http://${import.meta.env.VITE_API_URL}/articles`,
         method: 'GET',
         params: { topic, page },
       });
