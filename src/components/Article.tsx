@@ -55,6 +55,7 @@ function Article({ article, sx }: IArticleProps) {
           <div>
             <Button
               size="small"
+              variant='outlined'
               disabled={subscriptionPlan === SubscriptionPlans.FREE}
             >
               View article
