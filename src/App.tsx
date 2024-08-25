@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { FormControlLabel, Stack, Switch } from '@mui/material';
 import ArticlesPage from './pages/ArticlesPage';
-import './App.css';
 import { SubscriptionPlans } from './types/subscription';
 import { SubscriptionPlanContext } from './Context';
+import JoyrideTour from './components/JoyrideTour';
 
 function App() {
   const [subscriptionPlan, setSubscriptionPlan] = useState(
@@ -22,6 +22,7 @@ function App() {
   return (
     <>
       <SubscriptionPlanContext.Provider value={subscriptionPlan}>
+        <JoyrideTour />
         <Stack direction="row" justifyContent="flex-end" width="100%">
           <FormControlLabel
             control={<Switch onChange={onPlanChange} color="secondary" />}

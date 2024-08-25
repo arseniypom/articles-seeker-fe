@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import { Pagination, Tooltip, Typography } from '@mui/material';
@@ -81,14 +81,16 @@ function ArticlesPage() {
       >
         {pageTitle}
         <TextField
-          fullWidth
+          id="topic-input"
           label="Topic"
           value={topic.value}
           onChange={onInputChange}
           sx={{ mb: 2 }}
+          fullWidth
         />
       </Box>
       <Box
+        id="articles-list"
         sx={{
           height: '55vh',
           overflow: 'scroll',
