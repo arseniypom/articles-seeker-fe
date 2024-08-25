@@ -9,9 +9,6 @@ import {
   Typography,
 } from '@mui/material';
 import { IArticle } from '../types/article';
-import { useContext } from 'react';
-import { SubscriptionPlanContext } from '../Context';
-import { SubscriptionPlans } from '../types/subscription';
 
 interface IArticleProps {
   article: IArticle;
@@ -19,8 +16,6 @@ interface IArticleProps {
 }
 
 function Article({ article, sx }: IArticleProps) {
-  const subscriptionPlan = useContext(SubscriptionPlanContext);
-
   return (
     <Card variant="outlined" sx={sx}>
       <CardContent>
@@ -44,20 +39,9 @@ function Article({ article, sx }: IArticleProps) {
         </Typography>
       </CardContent>
       <CardActions sx={{ px: 2 }}>
-        <Tooltip
-          title={
-            subscriptionPlan === SubscriptionPlans.FREE
-              ? 'Viewing the full text requires a paid subscription'
-              : null
-          }
-          placement="top-end"
-        >
+        <Tooltip title="Will be available soon" placement="top-end">
           <div>
-            <Button
-              size="small"
-              variant='outlined'
-              disabled={subscriptionPlan === SubscriptionPlans.FREE}
-            >
+            <Button size="small" variant="outlined" disabled>
               View article
             </Button>
           </div>
