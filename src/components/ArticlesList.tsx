@@ -1,6 +1,7 @@
 import Article from './Article';
 import { IArticle } from '../types/article';
 import ArticleSkeleton from './ArticleSkeleton';
+import { Button, Stack, Typography } from '@mui/material';
 
 interface IArticleProps {
   articles?: IArticle[];
@@ -10,6 +11,8 @@ interface IArticleProps {
 }
 
 function ArticlesList({ articles, topic, isLoading, error }: IArticleProps) {
+  const reloadPage = () => window.location.reload();
+
   if (isLoading) {
     return (
       <>
@@ -19,15 +22,36 @@ function ArticlesList({ articles, topic, isLoading, error }: IArticleProps) {
   }
 
   if (error) {
-    return error;
+    return (
+      <Stack alignItems="center">
+        <Typography>
+          Something went wrong... Please reload the page or try again later
+        </Typography>
+        <Button
+          variant="outlined"
+          onClick={reloadPage}
+          sx={{ mt: 1, width: 'fit-content' }}
+        >
+          Reload page
+        </Button>
+      </Stack>
+    );
   }
 
   if (!topic) {
-    return "Start typing and we'll find the best articles for you ✨";
+    return (
+      <Typography>
+        Start typing and we'll find the best articles for you ✨
+      </Typography>
+    );
   }
 
   if (!articles?.length) {
-    return 'Sorry, we could not find any match... Please try other topic';
+    return (
+      <Typography>
+        Sorry, we could not find any match... Please try other topic
+      </Typography>
+    );
   }
 
   return (
