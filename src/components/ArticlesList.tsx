@@ -15,9 +15,11 @@ function ArticlesList({ articles, topic, isLoading, error }: IArticleProps) {
 
   if (isLoading) {
     return (
-      <>
+      <Stack gap={2}>
         <ArticleSkeleton />
-      </>
+        <ArticleSkeleton />
+        <ArticleSkeleton />
+      </Stack>
     );
   }
 
