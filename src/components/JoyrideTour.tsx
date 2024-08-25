@@ -24,7 +24,7 @@ const steps: Step[] = [
     title: 'Subscription Plans',
     target: '#subscription-plan-switch',
     content:
-      "Last, but not least: here you can switch between the Free and the Paid plans, this is made for demo purposes. For example, you'll not be able to see other pages than the first one with the Free plan.",
+      "Last, but not least: here you can switch between our Free and Paid plan (for demo purposes only). For example, you'll not be able to see other pages than the first one with the Free plan.",
     offset: 1,
   },
   {
@@ -54,7 +54,7 @@ function JoyrideTour() {
       showProgress
       scrollToFirstStep
       showSkipButton
-      disableOverlayClose
+      disableOverlay
       run={tourStatus === STATUS.RUNNING}
     />
   );

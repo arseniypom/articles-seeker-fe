@@ -25,7 +25,13 @@ function App() {
         <JoyrideTour />
         <Stack direction="row" justifyContent="flex-end" width="100%">
           <FormControlLabel
-            control={<Switch onChange={onPlanChange} color="secondary" />}
+            control={
+              <Switch
+                onChange={onPlanChange}
+                color="secondary"
+                id="subscription-plan-switch"
+              />
+            }
             label="Paid version"
           />
         </Stack>
