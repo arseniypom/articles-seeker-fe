@@ -20,16 +20,16 @@ To run this project locally, you'll need the following:
 
 1. **Clone the repository:**
 
-   \`\`\`bash
+   ```
    git clone https://github.com/yourusername/articles-seeker.git
    cd articles-seeker
-   \`\`\`
+   ```
 
 2. **Install dependencies:**
 
-   \`\`\`bash
+   ```
    npm install
-   \`\`\`
+   ```
 
 ## Running the Application
 
@@ -37,9 +37,9 @@ To run this project locally, you'll need the following:
 
 To run the application in development mode, use the following command:
 
-\`\`\`bash
+```
 npm run dev
-\`\`\`
+```
 
 This will start the app using Vite and provide a link to open it in your browser. The app will automatically reload if you make changes to the code.
 
@@ -47,9 +47,9 @@ This will start the app using Vite and provide a link to open it in your browser
 
 To lint the code and check for any issues, use the following command:
 
-\`\`\`bash
+```
 npm run lint
-\`\`\`
+```
 
 This will run ESLint on the codebase.
 
@@ -57,21 +57,21 @@ This will run ESLint on the codebase.
 
 To build the application for production, use:
 
-\`\`\`bash
+```
 npm run build
-\`\`\`
+```
 
-Or with \`yarn\`:
+Or with `yarn`:
 
-This command will first compile TypeScript and then create an optimized build of the application using Vite in the \`dist\` directory, ready to be deployed.
+This command will first compile TypeScript and then create an optimized build of the application using Vite in the `dist` directory, ready to be deployed.
 
 ### Preview
 
 To preview the production build locally, use:
 
-\`\`\`bash
+```
 npm run preview
-\`\`\`
+```
 
 This will serve the production build locally on your machine, allowing you to preview it before deployment.
 
@@ -80,7 +80,7 @@ This will serve the production build locally on your machine, allowing you to pr
 
 Here's an overview of the project's structure:
 
-\`\`\`
+```
 /src
 ├── components     # Reusable UI components
 ├── hooks          # Custom React hooks
@@ -89,11 +89,11 @@ Here's an overview of the project's structure:
 ├── App.tsx        # Main application component
 ├── Context.tsx    # React Context initialization
 └── main.tsx      # Entry point for the React app
-\`\`\`
+```
 
 ## API Integration
 
-The frontend interacts with the backend server to fetch articles based on the topic input by the user. The requests are handled using the \`axios\` library, and custom hooks are used to manage API calls and state.
+The frontend interacts with the backend server to fetch articles based on the topic input by the user. The requests are handled using the `axios` library, and custom hooks are used to manage API calls and state.
 
 ## Contributing
 
