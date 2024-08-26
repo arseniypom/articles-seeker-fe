@@ -61,8 +61,6 @@ To build the application for production, use:
 npm run build
 ```
 
-Or with `yarn`:
-
 This command will first compile TypeScript and then create an optimized build of the application using Vite in the `dist` directory, ready to be deployed.
 
 ### Preview
