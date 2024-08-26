@@ -21,7 +21,7 @@ const steps: Step[] = [
     offset: 1,
   },
   {
-    title: 'Change AI Model',
+    title: 'Change AI Model (PRO feature)',
     target: '#change-models-button',
     content: 'Here you can change the AI model used to search for articles',
     offset: 1,
@@ -30,7 +30,7 @@ const steps: Step[] = [
     title: 'Subscription Plans',
     target: '#subscription-plan-switch',
     content:
-      "Last, but not least: here you can switch between our Free and Paid plan (for demo purposes only). For example, you'll not be able to switch between different AI models with the Free plan.",
+      "Last, but not least: here you can switch between our Free and Paid plan (for demo purposes only). For example, you'll not be able to choose an AI model with the Free plan. Try it out! ",
     offset: 1,
   },
   {
