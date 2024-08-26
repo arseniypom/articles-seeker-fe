@@ -5,14 +5,14 @@ import { Pagination, Tooltip, Typography } from '@mui/material';
 import ArticlesList from '../components/ArticlesList';
 import { IArticlesResponse } from '../types/article';
 import { useAxiosRequest } from '../hooks/useAxiosRequest';
-import { SubscriptionPlanContext } from '../Context';
+import { AiModelContext, SubscriptionPlanContext } from '../Context';
 import { SubscriptionPlans } from '../types/subscription';
 
 function ArticlesPage() {
   const { data, isLoading, error, makeRequest } =
     useAxiosRequest<IArticlesResponse>();
   const subscriptionPlan = useContext(SubscriptionPlanContext);
-
+  const aiModel = useContext(AiModelContext);
   const [topic, setTopic] = useState({ value: '', isDirty: false });
   const [page, setPage] = useState(1);
 
@@ -50,7 +50,7 @@ function ArticlesPage() {
       await makeRequest({
         url: `${import.meta.env.VITE_API_URL}/articles`,
         method: 'GET',
-        params: { topic, page },
+        params: { topic, page, model: aiModel },
       });
     };
 
@@ -59,7 +59,7 @@ function ArticlesPage() {
     return () => {
       clearTimeout(timeoutId);
     };
-  }, [topic, page, makeRequest]);
+  }, [topic, page, makeRequest, aiModel]);
 
   return (
     <Box
