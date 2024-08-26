@@ -88,7 +88,7 @@ Here's an overview of the project's structure:
 ├── types          # TypeScript types and interfaces
 ├── App.tsx        # Main application component
 ├── Context.tsx    # React Context initialization
-└── main.tsx      # Entry point for the React app
+└── main.tsx       # Entry point for the React app
 ```
 
 ## API Integration
