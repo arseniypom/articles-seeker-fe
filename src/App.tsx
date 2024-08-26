@@ -39,7 +39,14 @@ function App() {
         <AiModelContext.Provider value={aiModel}>
           <JoyrideTour />
           <Stack direction="row" justifyContent="space-between" width="100%">
-            <Tooltip title="Switching between models requires a paid subscription" placement="bottom">
+            <Tooltip
+              title={
+                subscriptionPlan === SubscriptionPlans.FREE
+                  ? 'Switching between models requires a paid subscription'
+                  : null
+              }
+              placement="bottom"
+            >
               <div>
                 <Button
                   disabled={subscriptionPlan === SubscriptionPlans.FREE}
