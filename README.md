@@ -2,11 +2,6 @@
 
 **Articles Seeker** is a web application that allows users to search and browse through articles based on a topic of their choice. The frontend is built using React, TypeScript, and Material-UI, and it communicates with a backend server to fetch the articles.
 
-## Live version
-
-The application is deployed and available at:
-
-[https://articles-seeker-fe.vercel.app/](https://articles-seeker-fe.vercel.app/)
 
 ## Requirements
 
